@@ -2,7 +2,7 @@ FROM node:14.19.3
 
 WORKDIR /dashboard
 
-COPY package*.json /dashboard//
+COPY package*.json /dashboard/
 
 RUN npm install
 
