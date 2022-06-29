@@ -2,7 +2,7 @@ version: "3"
 
 services: 
 
-    api: 
+    backend: 
         container_name: api
         build: ./api
         restart: always
@@ -10,7 +10,7 @@ services:
             - "4000:4000"
 
     
-    dashboard:
+    frontend:
         container_name: dashboard
         build: ./dashboard
         restart: always
