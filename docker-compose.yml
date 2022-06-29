@@ -1,0 +1,18 @@
+version: "3"
+
+services: 
+
+    api: 
+        container_name: api
+        build: ./api
+        restart: always
+        ports: 
+            - "4000:4000"
+
+    
+    dashboard:
+        container_name: dashboard
+        build: ./dashboard
+        restart: always
+        ports: 
+            - "3000:3000"
