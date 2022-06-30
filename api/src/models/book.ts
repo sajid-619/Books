@@ -1,24 +1,15 @@
-import { IBook } from "./../types/book"
-import { model, Schema } from "mongoose"
+import { Schema, Document, model } from 'mongoose';
 
-const bookSchema: Schema = new Schema(
-  {
-    title: {
-      type: String,
-      required: true,
-    },
+export interface IBook extends Document {
+  title: string;
+  author: string;
+  status: string;
+}
 
-    author: {
-      type: String,
-      required: true,
-    },
+const schema = new Schema({
+  title: { type: String, required: true },
+  author: { type: String, required: true },
+  status: { type: String, required: true },
+});
 
-    status: {
-      type: Boolean,
-      required: true,
-    },
-  },
-  { timestamps: true }
-)
-
-export default model<IBook>("Book", bookSchema)
+export default model<IBook>('Book', schema);
